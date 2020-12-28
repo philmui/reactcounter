@@ -13,3 +13,15 @@ script:
   - docker run -e CI=true philmui/reactcounter npm run test
 
 # 4.  Tell Travis how to deploy our code to AWS
+deploy:
+  provider: elasticbeanstalk
+  region: "us-east-2"
+  app: "reactcounter"
+  env: "Reactcounter-env"
+  bucket_name: "elasticbeanstalk-us-east-2-044537394587"
+  bucket_path: "reactcounter"
+  on:
+    branch: master
+  access_key_id: $TRAVIS_AWS_ACCESS_KEY
+  secret_access_key: 
+    secure: "$TRAVIS_AWS_SECRET_KEY"
