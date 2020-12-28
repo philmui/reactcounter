@@ -21,7 +21,7 @@ deploy:
   bucket_name: "elasticbeanstalk-us-east-2-044537394587"
   bucket_path: "reactcounter"
   on:
-    branch: master
+    branch: main
   access_key_id: $TRAVIS_AWS_ACCESS_KEY
   secret_access_key: 
     secure: "$TRAVIS_AWS_SECRET_KEY"
